@@ -1,7 +1,7 @@
 <%if content.errors.any?%>
     Error:<%= content.errors.full_messages.join(', ')%><br/><br/>
 <%end%>
-<%= form_with(model: content, method: :post ) do |form| %>
+<%= form_with(model: content ) do |form| %>
     <div class'field' >
         <%= form.label :title%>
         <%= form.text_field :title%>
