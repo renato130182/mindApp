@@ -3,6 +3,10 @@ class ContentsController < ApplicationController
     before_action :set_content, only: [:show, :edit, :update, :destroy]
     def index
         @contents = current_user.contents
+        tag_names = params[:tags]
+        if tag_names.present?
+            @contents = @contents.joins(:tags).where(tags: {name: tag_names}).distinct
+        end
     end
 
     def new
