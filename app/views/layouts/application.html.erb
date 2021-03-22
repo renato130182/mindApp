@@ -11,14 +11,16 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <br/>
-      <br/>
-      <%= link_to 'Home', home_index_path %>
-      <%= link_to 'Content', contents_path,method: :get %>
-      <%= link_to 'Logout', destroy_user_session_path,method: :delete%>
-    <% end %>
-    <p class="alert"><%= alert %></p> 
-    <%= yield %>
+    <div class="container">
+      <% if user_signed_in? %>
+        <br/>
+        <br/>
+        <%= link_to 'Home', home_index_path %>
+        <%= link_to 'Content', contents_path,method: :get %>
+        <%= link_to 'Logout', destroy_user_session_path,method: :delete%>
+      <% end %>
+      <p class="alert"><%= alert %></p> 
+      <%= yield %>
+    </div>
   </body>
 </html>
