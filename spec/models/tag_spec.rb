@@ -9,7 +9,6 @@ RSpec.describe Tag, type: :model do
     it { should have_many(:contents).through(:tag_contents) }
   end
   describe 'Validations' do
-    
     it { should validate_presence_of(:name)}
     #it { should validate_uniqueness_of(:name).scoped_to(:user_id).case_insensitive }
   end 
